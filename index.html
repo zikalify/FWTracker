@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertile Window Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512x512.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Fertile Window Tracker</h1>
+        
+        <div class="header">
+        <button id="installPwaBtn" style="display: none;">Install App</button>
+        <button id="infoBtn">How does this work?</button>
+    </div>
+
+        <div id="explainer" style="display: none;">
+            <h2>How it works</h2>
+            <p>This tracker helps you monitor your fertility by observing cervical secretions (except during menstrual bleeding) twice daily. Each day, ask yourself two questions:</p>
+            <ul>
+                <li>Did I notice any secretions today?</li>
+                <li>Did I notice any secretions yesterday?</li>
+            </ul>
+            <p>If the answer is "Yes" to either question, pregnancy is possible today. If the answer is "No" to both, pregnancy is unlikely.</p>
+            <p>The presence of cervical secretions usually indicates fertility, while their absence suggests infertility.</p>
+            <p><strong>Note:</strong> If you notice secretions for more than 14 consecutive days, this could indicate an infection. Please consult your health provider.</p>
+            <h2>How to check for secretions</h2>
+            <p>You can check for secretions by seeing or touching them in your underwear or on toilet paper. Some people prefer to touch their external genitals (vulva). Many soon learn to detect secretions just by the sensation in the genital area, without needing to touch or see them. Use whichever way you prefer.</p>
+            <h2>Who can use this?</h2>
+            <p>This tracker can be used by anyone with regular or irregular cycles and can be started at any point during the cycle.</p>
+        </div>
+
+        <div id="messageContainer">
+            <div id="message"></div>
+        </div>
+
+        <form id="trackerForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+    
+            <label for="mucus">Cervical Mucus Observed?</label>
+            <div class="mucus-radio-group">
+                <label>
+                    <input type="radio" name="mucus" value="yes"> Yes
+                </label>
+                <label>
+                    <input type="radio" name="mucus" value="no"> No
+                </label>
+            </div>
+    
+            <button type="submit">Add</button>
+        </form>
+
+        <div id="log">
+            <h2>Observation Log</h2>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get today's date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        // Set max attribute of date input to today's date
+        document.getElementById("date").setAttribute("max", today);
+
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+              console.log('Service Worker registered: ', registration);
+            }).catch(function(err) {
+              console.log('Service Worker registration failed: ', err);
+            });
+          });
+        }
+
+    </script>
+</body>
+</html>

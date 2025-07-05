@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  padding: 15px 0;
+}
+
+h2, p {
+  font-family: inherit;
+}
+
+section {
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+select,
+input {
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 40px;
+}
+
+button,
+button#installPwaBtn,
+button#twoDayInfoBtn {
+  background: linear-gradient(135deg, #444, #222); /* Subtle gradient */
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background: linear-gradient(135deg, #555, #333); /* Slightly lighter gradient on hover */
+}
+
+#log {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#logList {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#logList li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logList li button {
+  padding: 10px;
+  font-size: 14px;
+  width: 60px;
+}
+
+#messageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#message {
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border: 5px solid #333;
+  font-size: 18px;
+}
+
+/* New style for the horizontal radio buttons */
+.mucus-radio-group {
+  display: flex;
+  gap: 10px; /* Adjust the gap between the buttons */
+  align-items: center;
+}
+
+.mucus-radio-group label {
+  margin: 0; /* Remove default margin for labels */
+  font-size: 16px;
+}
+
+/* Fix for explainer lists: bullets and text centered */
+#twoDayExplainer ul {
+  list-style: disc inside;
+  text-align: center;
+  margin: 1em 0;
+  padding-left: 0;
+}
+#twoDayExplainer li {
+  margin: 0.5em 0;
+  text-align: center;
+  display: list-item;
+}
