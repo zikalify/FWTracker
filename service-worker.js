@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-app-cache-v34';
+const CACHE_NAME = 'my-app-cache-v35';
 const urlsToCache = [
   '/FWTracker/',
   '/FWTracker/index.html',
