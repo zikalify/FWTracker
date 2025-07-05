@@ -1,12 +1,12 @@
 const CACHE_NAME = 'my-app-cache-v31';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/script.js',
-  '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/FWTracker/',
+  '/FWTracker/index.html',
+  '/FWTracker/styles.css',
+  '/FWTracker/script.js',
+  '/FWTracker/manifest.json',
+  '/FWTracker/icons/icon-192x192.png',
+  '/FWTracker/icons/icon-512x512.png'
 ];
 
 // Install event: Cache the essential resources initially
@@ -50,7 +50,7 @@ self.addEventListener('fetch', function(event) {
         });
       }).catch(function() {
         // In case of network failure, fall back to a cached fallback page
-        return caches.match('/');
+        return caches.match('/FWTracker/');
       })
   );
 });
