@@ -155,14 +155,15 @@ button:hover {
 }
 
 /* Fix for explainer lists: bullets and text centered */
-#twoDayExplainer ul {
-  list-style: disc inside;
-  text-align: center;
-  margin: 1em 0;
-  padding-left: 0;
+#explainer ul {
+  list-style: disc outside;
+  display: inline-block;
+  text-align: left;
+  margin: 1em auto;
+  padding-left: 1.5em;
 }
-#twoDayExplainer li {
+#explainer li {
   margin: 0.5em 0;
-  text-align: center;
+  text-align: left;
   display: list-item;
 }
